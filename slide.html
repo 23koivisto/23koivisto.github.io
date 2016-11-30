@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+
+    <title>Emerging Technologies Discussion Group, November 2016</title>
+
+    <!-- Required stylesheet -->
+    <link rel="stylesheet" media="screen" href="../core/deck.core.css">
+
+    <!-- Extension CSS files go here. Remove or add as needed. -->
+    <link rel="stylesheet" media="screen" href="../extensions/goto/deck.goto.css">
+    <link rel="stylesheet" media="screen" href="../extensions/menu/deck.menu.css">
+    <link rel="stylesheet" media="screen" href="../extensions/navigation/deck.navigation.css">
+    <link rel="stylesheet" media="screen" href="../extensions/status/deck.status.css">
+    <link rel="stylesheet" media="screen" href="../extensions/scale/deck.scale.css">
+
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link rel="stylesheet" href="../themes/style/swiss.css">
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="../core/print.css">
+
+    <!-- Required Modernizr file -->
+    <script src="../modernizr.custom.js"></script>
+  </head>
+  <body>
+
+    <div style="background-color: #eeeeee; border-bottom: 2px solid #999;">
+      <a href="http://www.lib.umd.edu/">
+	<img alt="University of Maryland Libraries"
+	     src="http://www.lib.umd.edu/images/wrapper/liblogo.png"
+	     style="padding: 5px">
+      </a>
+    </div>
+
+    <div class="deck-container">
+
+      <!-- Begin slides. Just make elements with a class of slide. -->
+
+      <section class="slide">
+	<h2>SPARQL: <br />A Query Language for the Semantic Web</h2>
+	<h3>Emerging Technologies Discussion Group Presentation</h3>
+	<h3>Presented by members of the Libraries Coding Workshop</h3>
+	<h3>November 29, 2016</h3>
+      </section>
+
+      <section class="slide">
+	<h2>What is SPARQL?</h2>
+	<ul>
+	  <li>SPARQL = "SPARQL Protocol and RDF Query Language"</li>
+	  <li><a href="https://www.w3.org/TR/rdf-sparql-query/">Original 1.0 release by W3C in 2008</a>.</w3>
+<li><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank">Current version (1.1) appeared in 2013</a>.</li>
+<li>Together with RDF, RDFS, and OWL, SPARQL is a core techology of the semantic web.</li>
+</ul>
+</section>
+
+<section class="slide">
+  <h2>What is the Semantic Web?</h2>
+  <ul>
+    <li>A central feature of the WWW is the use of "hyperlinks" or "jump links" to connect documents.</li>
+    <li>In web 1.0, these links have no meaning, but are merely unidirectional connections between documents.</li>
+    <li>By contrast, in the Semantic Web, there is another kind of linkage, expressed in the form of triples connecting "resources".</li>
+    <li>The links that are created by these triples have a meaning that denotes the nature of the relationship between the two resources that are being connected.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>What is the Semantic Web?</h2>
+  <ul>
+    <li>These links are still fundamentally unidirectional, but they also express an idea or statement about things in the world.</li>
+    <li>The subject, predicate, and object can all be URIs that refer to entities and concepts in the world.</li>
+    <li>For example, a triple might take express the idea that: "LeoTolstoy" "isAuthorOf" "WarAndPeace", but with each of these three concepts expressed as a globally unique identifier, or URI.</li>
+    <li>RDF, the Resource Description Framework, is the way these triples are expressed; there are in turn different syntaxes for expressing RDF (e.g. n-triples, turtle)</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Why SPARQL?</h2>
+  <ul>
+    <li>SPARQL is a query language for RDF.</li>
+    <li>RDF is directed, labeled graph data format:
+      <ul>
+	<li>graph: network of vertices and edges (nodes and links);</li>
+	<li>directed: links have a "distinguished direction";</li>
+	<li>labeled: links (predicates) have meaning.</li>
+      </ul>
+    </li>
+    <li>RDF is made up of triples, and triples have three components (Subject, Predicate and Object).</li>
+    <li>SPARQL supports aggregation, negation, subqueries, creating values by expressions, and extensible value testing. </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>SPARQL Syntax</h2>
+  <ul>
+    <li>A basic query starts with a SELECT clause identifying the variables of interest.
+    <li>Query variables are indicated by the use of either a question mark or dollar sign.
+    <li>The ? or $ are not part of the variable name, so $abc and ?abc are equivalent.</li>
+    <li>The second part of this basic query is a WHERE clause indicating a graph pattern to match against.</li>
+    <li>The graph pattern is in the form subject, predicate, object enclosed by curly braces.</li>
+    <li>The parts of the graph pattern can be expressed as URIs or as a prefix plus an identifier (this shorthand is known as the 'qname' syntax).</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>SPARQL Functions</h2>
+  <ul>
+    <li>SPARQL supports various functions that allow the filtering and processing of query results:
+      <ul>
+	<li>Functions on strings;</li>
+	<li>Functions on numbers;</li>
+	<li>Functions on date and time;</li>
+	<li>Hash functions.</li>
+    </ul></li>
+    <li>Other "advanced" features include:
+      <ul>
+	<li>Pattern matching (regex);</li>
+	<li>Inferencing;</li>
+	<li>Blank nodes.</li>
+	<ul></li>
+    </ul>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in UMD Libraries</h2>
+  <ul>
+    <li>SPARQL is likely to be increasingly part of day-to-day work in the Libraries.</li>
+    <li>One of the first ways it is being used is in Fedora 4.</li>
+    <li>Fedora is an implementation of the W3C's Linked Data Platform.</li>
+    <li>Metadata is stored natively as RDF properties on repository containers.</li>
+    <li>Fedora comes bundled with an RDF database or "Triplestore" called Fuseki.</li>
+    <li>One immediate benefit of this infrastructure is that it will become possible to write queries on multiple Fedora-based repositories at once.</li>
+    <li>Another RDF-based system currently being piloted on campus is Vivo, a RDF-based institutional data management framework.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action</h2>
+  <h4><a href="http://nomisma.org/sparql">http://nomisma.org/sparql</a></h4>
+  <p>The following examples are taken from the excellent webinar on SPARQL
+    by Ethan Gruber of the American Numismatic Society. For the full set of
+    original slides, see:
+    <a href="http://dublincore.org/resources/training/ASIST_Webinar_20150513/SPARQL_2015.pdf">http://dublincore.org/resources/training/ASIST_Webinar_20150513/SPARQL_2015.pdf</a>
+  </p>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Basic Query</h2>
+  <pre>
+    SELECT * WHERE {
+    ?s ?p ?o
+    } LIMIT 100
+  </pre>
+</h3>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Prefixes</h2>
+  <pre>
+    PREFIX skos: &lt;http://www.w3.org/2004/02/skos/core#&gt;
+    PREFIX nm: &lt;http://nomisma.org/id/&gt;
+
+    SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Complex Query</h2>
+  <pre>
+    SELECT ?label ?type ?field ?lat ?long WHERE {
+    nm:rome skos:prefLabel ?label .
+    nm:rome rdf:type ?type .
+    nm:rome dcterms:isPartOf ?field .
+    nm:rome geo:location ?loc .
+    ?loc geo:lat ?lat .
+    ?loc geo:long ?long
+    }
+
+    [repeated subjects can be omitted with the help of semicolons]
+
+    SELECT ?label ?type ?field ?lat ?long WHERE {
+    nm:rome skos:prefLabel ?label ;
+    rdf:type ?type ;
+    dcterms:isPartOf ?field ;
+    geo:location ?loc .
+    ?loc geo:lat ?lat ;
+    geo:long ?long
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Sorting</h2>
+  <pre>
+    SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label
+    } ORDER BY ASC(xsd:string(?label))
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Filtering</h2>
+  <pre>
+    SELECT ?label WHERE {
+    nm:rome skos:prefLabel ?label .
+    FILTER langMatches( lang(?label), "en" )
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Broad Queries</h2>
+  <pre>
+    SELECT ?mints WHERE {
+    ?mints a nmo:Mint
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>SPARQL in Action: Visualize Big Datasets</h2>
+  <pre>
+    SELECT ?label ?lat ?long WHERE {
+    ?mints a nmo:Mint ;
+    skos:prefLabel ?label ;
+    dcterms:isPartOf nm:greek_numismatics ;
+    geo:location ?loc .
+    ?loc geo:lat ?lat ;
+    geo:long ?long
+    FILTER langMatches( lang(?label), "en" )
+    }
+  </pre>
+</section>
+
+<section class="slide">
+  <h2>Thank you!</h2>
+  <h3>Peter Eichman (peichman@umd.edu)</h3>
+  <h3>Joseph Koivisto (jkoivist@umd.edu)</h3>
+  <h3>Dinesh Mendhe (dmendhe@umd.edu)</h3>
+  <h3>Bria Parker (blparker@umd.edu)
+    <h3>Joshua Westgard (westgard@umd.edu)</h3>
+</section>
+
+<!-- End slides. -->
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<div aria-role="navigation">
+  <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+  <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+</div>
+
+<!-- deck.status snippet -->
+<p class="deck-status" aria-role="status">
+  <span class="deck-status-current"></span>
+  /
+  <span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+  <label for="goto-slide">Go to slide:</label>
+  <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+  <datalist id="goto-datalist"></datalist>
+  <input type="submit" value="Go">
+</form>
+
+<!-- End extension snippets. -->
+</div>
+
+<!-- Required JS files. -->
+<script src="../jquery.min.js"></script>
+<script src="../core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+<script src="../extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+  $.deck('.slide');
+  });
+</script>
+</body>
+</html>
