@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Let's try this out</title>
-    
     <!-- Required stylesheet -->
     <link rel="stylesheet" media="screen" href="../core/deck.core.css">
 
@@ -15,15 +14,23 @@
 
     <!-- Style theme. More available in /themes/style/ or create your own. -->
     <link rel="stylesheet" href="../themes/style/swiss.css">
-    
+
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link rel="stylesheet" media="screen" href="../themes/transition/horizontal-slide.css">
+
+    <!-- Basic black and white print styles -->
+    <link rel="stylesheet" media="print" href="../core/print.css">
+
+    <!-- Required Modernizr file -->
+      <script src="../modernizr.custom.js"></script>
   </head>
   <body>
-<div class="deck-container on-slide-1">
-  <section class="slide deck-previous">
+<div class="deck-container">
+  <section class="slide">
     <h1>My Presentation</h1>
   </section>
 
-  <section class="slide deck-current">
+  <section class="slide">
     <h2>Slide Header</h2>
     <p>Here is a list of points:</p>
     <ul>
@@ -33,7 +40,7 @@
     </ul>
   </section>
 
-  <section class="slide deck-next">
+  <section class="slide">
     <h2>Another Slide</h2>
     <blockquote cite="http://example.com">
       <p>Lorem ipsum dolor sit amet.</p>
